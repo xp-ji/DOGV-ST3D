@@ -1,0 +1,53 @@
+{
+    "data_path": "/data/jixiaopeng/dataset/ntu_rgb+d/depth",
+    "action_names": "./configs/NTU_RGBD/action_names.txt",
+    "train": {
+        "file_list": "./configs/NTU_RGBD/2_X-View_train.txt",
+        "short_param": {
+            "pre_region_crop": [90, 410, 90, 410],
+            "pre_depth_clip": [500, 8000],
+            "group_scale": {
+                "size": [320, 320]
+            },
+            "group_multi_scale_crop": {
+                "size": [224, 224],
+                "scales": [1, 0.9, 0.8, 0.7]
+            },
+            "random_horizontal_flip": 0.5,
+            "normalization": 255.0,
+            "standardization": {
+                "mean": 0.5,
+                "std": 0.5
+            }
+        },
+        "long_param": {
+            "scales": [1.0, 0.8, 0.5],
+            "segments": 16,
+            "sampling_type": "random"
+        }
+    },
+    "test": {
+        "file_list": "./configs/NTU_RGBD/2_X-View_test.txt",
+        "short_param": {
+            "pre_region_crop": [90, 410, 90, 410],
+            "pre_depth_clip": [500, 8000],
+            "group_scale": {
+                "size": [224, 224]
+            },
+            "group_center_crop": {
+                "size": [224, 224]
+            },
+            "normalization": 255.0,
+            "standardization": {
+                "mean": 0.5,
+                "std": 0.5
+            }
+        },
+        "long_param": {
+            "scales": [1.0],
+            "segments": 16,
+            "sampling_type": "fixed_middle"
+        }
+    },
+    "num_classes": 60
+}

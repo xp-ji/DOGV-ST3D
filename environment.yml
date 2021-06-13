@@ -1,0 +1,17 @@
+name: dogv
+channels:
+  - pytorch
+  - conda-forge
+  - menpo
+  - defaults
+dependencies:
+  - opencv
+  - python=3.6
+  - scikit-learn
+  - numpy
+  - pillow
+  - pytorch
+  - tensorboardX
+  - torchvision
+  - tqdm
+  - pip
